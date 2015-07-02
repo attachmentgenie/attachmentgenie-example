@@ -1,0 +1,14 @@
+{
+  "name": "attachmentgenie-example",
+  "version": "0.1.0",
+  "author": "attachmentgenie",
+  "summary": "Module generation test",
+  "license": "Apache-2.0",
+  "source": "https://github.com/attachmentgenie/attachmentgenie-example.git",
+  "project_page": "https://github.com/attachmentgenie/attachmentgenie-example",
+  "issues_url": "https://github.com/attachmentgenie/attachmentgenie-example/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
