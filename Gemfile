@@ -27,8 +27,6 @@ group :development, :unit_tests do
   gem 'metadata-json-lint',      :require => false
   gem 'pry',                     :require => false
   gem 'simplecov',               :require => false
-  gem "guard-rake",              :require => false
-  gem 'ruby_gntp',               :require => false
 end
 
 beaker_version = ENV['BEAKER_VERSION']
