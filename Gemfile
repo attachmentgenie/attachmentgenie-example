@@ -10,6 +10,8 @@ group :development, :unit_tests do
   gem 'puppet_facts',            :require => false
   gem 'json',                    :require => false
   gem 'metadata-json-lint',      :require => false
+  gem "guard-rake",              :require => false
+  gem 'ruby_gntp',               :require => false
 end
 
 group :system_tests do
