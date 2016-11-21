@@ -1,38 +1,57 @@
-# == Class: example
+# Class to install and configure apache example.
 #
-# Full description of class example here.
+# Use this module to install and configure apache example.
 #
-# === Parameters
+# @example Declaring the class
+#   include ::example
 #
-# Document parameters here.
-#
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
-#
-# === Variables
-#
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the function of this class and if
-#   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should be avoided in favor of class parameters as
-#   of Puppet 2.6.)
-#
-# === Examples
-#
-#  class { 'example':
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#  }
-#
-# === Authors
-#
-# Author Name <author@domain.com>
-#
-# === Copyright
-#
-# Copyright 2015 Your name here, unless otherwise noted.
-#
-class example {}
+# @param archive_source (String) Location of example binary release.
+# @param group (String) Group that owns example files.
+# @param install_dir (String) Location of example binary release.
+# @param install_method (String) How to install example.
+# @param manage_service (Boolean) Manage the example service.
+# @param manage_user (Boolean) Manage example user and group.
+# @param package_name (String) Name of package to install.
+# @param package_version (String) Version of example to install.
+# @param service_name (String) Name of service to manage.
+# @param service_provider (String) init system that is used.
+# @parama user (String) user that owns example files.
+class example (
+  $archive_source   = $::example::params::archive_source,
+  $group            = $::example::params::group,
+  $install_dir      = $::example::params::install_dir,
+  $install_method   = $::example::params::install_method,
+  $manage_service   = $::example::params::manage_service,
+  $manage_user      = $::example::params::manage_user,
+  $package_name     = $::example::params::package_name,
+  $package_version  = $::example::params::package_version,
+  $service_name     = $::example::params::service_name,
+  $service_provider = $::example::params::service_provider,
+  $user             = $::example::params::user,
+) inherits example::params {
+  validate_bool(
+    $manage_service,
+    $manage_user,
+  )
+  if $install_method == 'archive' {
+    validate_string(
+      $archive_source
+    )
+  }
+  validate_string(
+    $group,
+    $install_dir,
+    $install_method,
+    $package_name,
+    $package_version,
+    $service_name,
+    $service_provider,
+    $user,
+  )
+
+  anchor { 'example::begin': } ->
+  class{ '::example::install': } ->
+  class{ '::example::config': } ~>
+  class{ '::example::service': } ->
+  anchor { 'example::end': }
+}
