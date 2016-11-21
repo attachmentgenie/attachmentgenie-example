@@ -153,7 +153,7 @@ describe 'example' do
               :service_provider => 'debian'
           }
         }
-        it { should contain_file('/etc/init.d/example').with_content(/(^\/opt\/special\/bin\/.*$)+/) }
+        it { should contain_file('/etc/init.d/example').with_content(/(^exec="\/opt\/special\/example"$)+/) }
       end
 
       context 'with install_dir set to /opt/special and manage_service set to true and service_provider set to init' do
@@ -165,7 +165,7 @@ describe 'example' do
               :service_provider => 'init'
           }
         }
-        it { should contain_file('/etc/init.d/example').with_content(/(^\/opt\/special\/bin\/.*$)+/) }
+        it { should contain_file('/etc/init.d/example').with_content(/(^exec="\/opt\/special\/example"$)+/) }
       end
 
       context 'with install_dir set to /opt/special and manage_service set to true and service_provider set to redhat' do
@@ -177,7 +177,7 @@ describe 'example' do
               :service_provider => 'redhat'
           }
         }
-        it { should contain_file('/etc/init.d/example').with_content(/(^\/opt\/special\/bin\/.*$)+/) }
+        it { should contain_file('/etc/init.d/example').with_content(/(^exec="\/opt\/special\/example"$)+/) }
       end
 
       context 'with install_dir set to /opt/special and manage_service set to true and service_provider set to systemd' do
@@ -189,7 +189,7 @@ describe 'example' do
               :service_provider => 'systemd'
           }
         }
-        it { should contain_systemd__Unit_file('example.service').with_content(/(\/opt\/special\/bin.*$)+/) }
+        it { should contain_systemd__Unit_file('example.service').with_content(/(\/opt\/special\/example.*$)+/) }
       end
 
       context 'with install_method set to archive' do
@@ -322,7 +322,7 @@ describe 'example' do
           }
         }
         it { should contain_service('specialservice') }
-        it { should contain_file('/etc/init.d/specialservice').that_notifies('Service[specialservice]').with_content(/^NAME=specialservice/) }
+        it { should contain_file('/etc/init.d/specialservice').that_notifies('Service[specialservice]').with_content(/^prog="specialservice"/) }
       end
 
       context 'with service_name set to specialservice and with service_provider set to init' do
@@ -334,7 +334,7 @@ describe 'example' do
           }
         }
         it { should contain_service('specialservice') }
-        it { should contain_file('/etc/init.d/specialservice').that_notifies('Service[specialservice]').with_content(/^NAME=specialservice/) }
+        it { should contain_file('/etc/init.d/specialservice').that_notifies('Service[specialservice]').with_content(/^prog="specialservice"/) }
       end
 
       context 'with service_name set to specialservice and with service_provider set to redhat' do
@@ -346,7 +346,7 @@ describe 'example' do
           }
         }
         it { should contain_service('specialservice') }
-        it { should contain_file('/etc/init.d/specialservice').that_notifies('Service[specialservice]').with_content(/^NAME=specialservice/) }
+        it { should contain_file('/etc/init.d/specialservice').that_notifies('Service[specialservice]').with_content(/^prog="specialservice"/) }
       end
 
       context 'with service_name set to specialservice and with service_provider set to systemd' do
