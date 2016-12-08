@@ -15,7 +15,7 @@
 # @param package_version (String) Version of example to install.
 # @param service_name (String) Name of service to manage.
 # @param service_provider (String) init system that is used.
-# @parama user (String) user that owns example files.
+# @param user (String) user that owns example files.
 class example (
   $archive_source   = $::example::params::archive_source,
   $group            = $::example::params::group,
