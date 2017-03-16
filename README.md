@@ -69,11 +69,14 @@ This is where you list OS compatibility, version compatibility, etc.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+### Running tests
 
-## Release Notes/Contributors/Etc **Optional**
+This project contains tests for both rspec-puppet and test kitchen to verify functionality. For detailed information on using these tools, please see their respective documentation.
 
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+#### Testing quickstart:
+
+```
+gem install bundler
+bundle install
+bundle exec rake guard
+bundle exec kitchen test
