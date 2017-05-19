@@ -49,9 +49,9 @@ class example (
     $user,
   )
 
-  anchor { 'example::begin': } ->
-  class{ '::example::install': } ->
-  class{ '::example::config': } ~>
-  class{ '::example::service': } ->
-  anchor { 'example::end': }
+  anchor { 'example::begin': }
+  -> class{ '::example::install': }
+  -> class{ '::example::config': }
+  ~> class{ '::example::service': }
+  -> anchor { 'example::end': }
 }
