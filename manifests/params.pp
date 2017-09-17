@@ -2,7 +2,7 @@
 #
 # Dont include this class directly.
 #
-class example::params () {
+class example::params {
   $archive_source  = undef
   $group           = 'example'
   $install_dir     = '/opt/example'

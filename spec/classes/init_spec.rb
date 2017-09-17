@@ -6,6 +6,7 @@ describe 'example' do
 
       context 'with defaults for all parameters' do
         it { should contain_class('example') }
+        it { should contain_class('example::params') }
         it { should contain_anchor('example::begin').that_comes_before('Class[example::Install]') }
         it { should contain_class('example::install').that_comes_before('Class[example::Config]') }
         it { should contain_class('example::config').that_notifies('Class[example::Service]') }
@@ -218,15 +219,6 @@ describe 'example' do
         it { should contain_package('example') }
       end
 
-      context 'with install_method set to invalid' do
-        let(:params) {
-          {
-            :install_method => 'invalid'
-          }
-        }
-        it { should raise_error(/Installation method invalid not supported/) }
-      end
-
       context 'with manage_service set to true' do
         let(:params) {
           {
@@ -276,7 +268,7 @@ describe 'example' do
             :package_name   => 'specialpackage',
           }
         }
-        it { should contain_package('specialpackage') }
+        it { should contain_package('example').with_name('specialpackage') }
       end
 
       context 'with package_name set to specialpackage and manage_service set to true' do
@@ -288,7 +280,7 @@ describe 'example' do
             :service_name   => 'example'
           }
         }
-        it { should contain_package('specialpackage') }
+        it { should contain_package('example').with_name('specialpackage') }
         it { should contain_service('example').that_subscribes_to('Package[specialpackage]') }
       end
 

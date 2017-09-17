@@ -14,8 +14,9 @@ class example::install {
   }
   case $::example::install_method {
     'package': {
-      package { $::example::package_name:
+      package { 'example':
         ensure => $::example::package_version,
+        name   => $::example::package_name,
       }
     }
     'archive': {
