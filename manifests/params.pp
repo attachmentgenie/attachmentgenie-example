@@ -12,6 +12,7 @@ class example::params {
   $package_name    = 'example'
   $package_version = 'present'
   $service_name    = 'example'
+  $service_ensure  = 'running'
   $user            = 'example'
   case $::osfamily {
     'Debian': {

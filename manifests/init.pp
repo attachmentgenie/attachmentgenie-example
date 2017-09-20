@@ -1,6 +1,6 @@
-# Class to install and configure apache example.
+# Class to install and configure example.
 #
-# Use this module to install and configure apache example.
+# Use this module to install and configure example.
 #
 # @example Declaring the class
 #   include ::example
@@ -15,6 +15,7 @@
 # @param package_version Version of example to install.
 # @param service_name Name of service to manage.
 # @param service_provider Init system that is used.
+# @param service_ensure The state of the service.
 # @param user User that owns example files.
 class example (
   Optional[String] $archive_source = $::example::params::archive_source,
@@ -27,6 +28,7 @@ class example (
   String $package_version = $::example::params::package_version,
   String $service_name = $::example::params::service_name,
   String $service_provider = $::example::params::service_provider,
+  Enum['running','stopped'] $service_ensure = $::example::params::service_ensure,
   String $user = $::example::params::user,
 ) inherits example::params {
   anchor { 'example::begin': }

@@ -3,9 +3,9 @@ control 'jobmanager 01' do
   title 'example jobmanager service is running'
   desc 'Ensures that the example jobmanager service is up and running'
   describe service('example') do
-    it { should be_enabled }
-    it { should be_installed }
-    it { should be_running }
+    it { is_expected.to be_enabled }
+    it { is_expected.to be_installed }
+    it { is_expected.to be_running }
   end
 end
 
@@ -14,8 +14,8 @@ control 'jobmanager 02' do
   title 'example jobmanager service is listening at port 8081'
   desc 'Ensures that the example jobmanager service is listening at port 8081'
   describe port(8081) do
-    it { should be_listening }
-    its('processes') { should include 'java'}
-    its('protocols') { should include 'tcp6' }
+    it { is_expected.to be_listening }
+    its('processes') { is_expected.to include 'java' }
+    its('protocols') { is_expected.to include 'tcp6' }
   end
 end
