@@ -1,14 +1,25 @@
 {
   "name": "attachmentgenie-example",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "bram vogelaar <bram@attachmentgenie.com>",
   "summary": "Setup example",
   "license": "MIT",
   "source": "https://github.com/attachmentgenie/attachmentgenie-example.git",
   "project_page": "https://github.com/attachmentgenie/attachmentgenie-example",
   "issues_url": "https://github.com/attachmentgenie/attachmentgenie-example/issues",
-  "tags": [
-    "example"
+  "dependencies": [
+    {
+      "name": "puppet-archive",
+      "version_requirement": ">=2.0.0 <=3.0.0"
+    },
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.13.0 < 6.0.0"
+    },
+    {
+      "name": "camptocamp-systemd",
+      "version_requirement": ">=1.0.0 <=2.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
@@ -33,18 +44,16 @@
       ]
     }
   ],
-  "dependencies": [
+  "requirements": [
     {
-      "name": "puppet-archive",
-      "version_requirement": ">=2.0.0 <=3.0.0"
-    },
-    {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 4.13.0 < 5.0.0"
-    },
-    {
-      "name": "camptocamp-systemd",
-      "version_requirement": ">=1.0.0 <=2.0.0"
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 7.0.0"
     }
-  ]
+  ],
+  "tags": [
+    "example"
+  ],
+  "pdk-version": "1.7.1",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.7.1-0-g810b982"
 }

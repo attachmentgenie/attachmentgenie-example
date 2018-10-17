@@ -16,6 +16,9 @@ class example::install {
   }
   case $::example::install_method {
     'package': {
+      if $::example::manage_repo {
+        class { 'example::repo': }
+      }
       package { 'example':
         ensure => $::example::package_version,
         name   => $::example::package_name,

@@ -9,6 +9,7 @@ class example::params {
   $install_method  = 'package'
   $manage_service  = true
   $manage_user     = true
+  $manage_repo     = true
   $package_name    = 'example'
   $package_version = 'present'
   $service_name    = 'example'

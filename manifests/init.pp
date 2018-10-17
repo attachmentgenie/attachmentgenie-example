@@ -9,6 +9,7 @@
 # @param group Group that owns example files.
 # @param install_dir Location of example binary release.
 # @param install_method How to install example.
+# @param manage_repo Manage the example repo.
 # @param manage_service Manage the example service.
 # @param manage_user Manage example user and group.
 # @param package_name Name of package to install.
@@ -22,6 +23,7 @@ class example (
   String $group = $::example::params::group,
   String $install_dir = $::example::params::install_dir,
   Enum['archive','package'] $install_method = $::example::params::install_method,
+  Boolean $manage_repo = $::example::params::manage_repo,
   Boolean $manage_service = $::example::params::manage_service,
   Boolean $manage_user = $::example::params::manage_user,
   String $package_name = $::example::params::package_name,
