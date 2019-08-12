@@ -53,7 +53,7 @@
   "tags": [
     "example"
   ],
-  "pdk-version": "1.7.1",
-  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
-  "template-ref": "1.7.1-0-g810b982"
+  "pdk-version": "1.12.0",
+  "template-url": "pdk-default#1.12.0",
+  "template-ref": "1.12.0-0-g55d9ae2"
 }
