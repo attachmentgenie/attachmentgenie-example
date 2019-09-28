@@ -215,7 +215,6 @@ describe 'example' do
         end
 
         it { is_expected.to contain_package('example').with_name('specialpackage') }
-        it { is_expected.to contain_service('example').that_subscribes_to('Package[specialpackage]') }
       end
 
       context 'with package_version set to 42.42.42' do
