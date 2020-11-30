@@ -1,7 +1,6 @@
 # Class to install example.
 #
-# Dont include this class directly.
-#
+# @api private
 class example::install {
   if $::example::manage_user {
     user { 'example':

@@ -4,90 +4,6 @@ describe 'example' do
     context "on #{os}" do
       let(:facts) { facts }
 
-      context 'with group set to myspecialgroup and service_provider set to debian' do
-        let(:params) do
-          {
-            group: 'myspecialgroup',
-            install_dir: '/opt/example',
-            manage_service: true,
-            manage_user: true,
-            service_name: 'example',
-            service_provider: 'debian',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_group('myspecialgroup') }
-      end
-
-      context 'with group set to myspecialgroup and service_provider set to init' do
-        let(:params) do
-          {
-            group: 'myspecialgroup',
-            install_dir: '/opt/example',
-            manage_service: true,
-            manage_user: true,
-            service_name: 'example',
-            service_provider: 'init',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_group('myspecialgroup') }
-      end
-
-      context 'with group set to myspecialgroup and service_provider set to redhat' do
-        let(:params) do
-          {
-            group: 'myspecialgroup',
-            install_dir: '/opt/example',
-            manage_service: true,
-            manage_user: true,
-            service_name: 'example',
-            service_provider: 'redhat',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_group('myspecialgroup') }
-      end
-
-      context 'with install_dir set to /opt/special and manage_service set to true and service_provider set to debian' do
-        let(:params) do
-          {
-            install_dir: '/opt/special',
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'debian',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_content(%r{^exec="\/opt\/special\/example"$}) }
-      end
-
-      context 'with install_dir set to /opt/special and manage_service set to true and service_provider set to init' do
-        let(:params) do
-          {
-            install_dir: '/opt/special',
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'init',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_content(%r{^exec="\/opt\/special\/example"$}) }
-      end
-
-      context 'with install_dir set to /opt/special and manage_service set to true and service_provider set to redhat' do
-        let(:params) do
-          {
-            install_dir: '/opt/special',
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'redhat',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_content(%r{^exec="\/opt\/special\/example"$}) }
-      end
-
       context 'with install_dir set to /opt/special and manage_service set to true and service_provider set to systemd' do
         let(:params) do
           {
@@ -145,45 +61,6 @@ describe 'example' do
         end
 
         it { is_expected.to contain_service('example').with_name('specialservice') }
-      end
-
-      context 'with service_name set to specialservice and with service_provider set to debian' do
-        let(:params) do
-          {
-            manage_service: true,
-            service_name: 'specialservice',
-            service_provider: 'debian',
-          }
-        end
-
-        it { is_expected.to contain_service('example').with_name('specialservice') }
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/specialservice').that_notifies('Service[example]').with_content(%r{^prog="specialservice"}) }
-      end
-
-      context 'with service_name set to specialservice and with service_provider set to init' do
-        let(:params) do
-          {
-            manage_service: true,
-            service_name: 'specialservice',
-            service_provider: 'init',
-          }
-        end
-
-        it { is_expected.to contain_service('example').with_name('specialservice') }
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/specialservice').that_notifies('Service[example]').with_content(%r{^prog="specialservice"}) }
-      end
-
-      context 'with service_name set to specialservice and with service_provider set to redhat' do
-        let(:params) do
-          {
-            manage_service: true,
-            service_name: 'specialservice',
-            service_provider: 'redhat',
-          }
-        end
-
-        it { is_expected.to contain_service('example').with_name('specialservice') }
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/specialservice').that_notifies('Service[example]').with_content(%r{^prog="specialservice"}) }
       end
 
       context 'with service_name set to specialservice and with service_provider set to systemd' do
@@ -249,51 +126,6 @@ describe 'example' do
         end
 
         it { is_expected.to raise_error(%r{Service provider invalid not supported}) }
-      end
-
-      context 'with user set to myspecialuser and service_provider set to debian' do
-        let(:params) do
-          {
-            user: 'myspecialuser',
-            install_dir: '/opt/example',
-            manage_user: true,
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'debian',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/example').with_owner('myspecialuser') }
-      end
-
-      context 'with user set to myspecialuser and service_provider set to init' do
-        let(:params) do
-          {
-            user: 'myspecialuser',
-            install_dir: '/opt/example',
-            manage_user: true,
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'init',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/example').with_owner('myspecialuser') }
-      end
-
-      context 'with user set to myspecialuser and service_provider set to redhat' do
-        let(:params) do
-          {
-            user: 'myspecialuser',
-            install_dir: '/opt/example',
-            manage_user: true,
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'redhat',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/example').with_owner('myspecialuser') }
       end
     end
   end

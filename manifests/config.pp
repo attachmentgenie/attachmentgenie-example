@@ -1,5 +1,4 @@
 # Class to configure example.
 #
-# Dont include this class directly.
-#
+# @api private
 class example::config {}

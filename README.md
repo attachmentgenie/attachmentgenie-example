@@ -38,30 +38,17 @@ management, etc.) this is the time to mention it.
 * This is a great place to stick any warnings.
 * Can be in list or paragraph form.
 
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-### Beginning with example
-
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
-
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+All options and configuration can be done through interacting with the parameters
+on the main example class.
+These are now documented via [Puppet Strings](https://github.com/puppetlabs/puppet-strings)
+
+You can view example usage in [REFERENCE](REFERENCE.md).
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+See [REFERENCE](REFERENCE.md).
 
 ## Limitations
 
@@ -71,12 +58,14 @@ This is where you list OS compatibility, version compatibility, etc.
 
 ### Running tests
 
-This project contains tests for both rspec-puppet and test kitchen to verify functionality. For detailed information on using these tools, please see their respective documentation.
+This project contains tests for both rspec-puppet and litmus to verify functionality. For detailed information on using these tools, please see their respective documentation.
 
 #### Testing quickstart:
 
 ```
-gem install bundler
-bundle install
-bundle exec rake guard
-bundle exec kitchen test
+pdk bundle install
+pdk bundle exec rake 'litmus:provision_list[puppet6]'
+pdk bundle exec rake 'litmus:install_agent[puppet6]'
+pdk bundle exec rake litmus:install_module
+pdk bundle exec rake litmus:acceptance:parallel
+pdk bundle exec rake litmus:tear_down

@@ -6,7 +6,6 @@ describe 'example' do
 
       context 'with defaults for all parameters' do
         it { is_expected.to contain_class('example') }
-        it { is_expected.to contain_class('example::params') }
         it { is_expected.to contain_anchor('example::begin').that_comes_before('Class[example::Install]') }
         it { is_expected.to contain_class('example::install').that_comes_before('Class[example::Config]') }
         it { is_expected.to contain_class('example::config').that_notifies('Class[example::Service]') }

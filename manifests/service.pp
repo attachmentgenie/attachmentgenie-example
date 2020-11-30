@@ -1,7 +1,6 @@
 # Class to manage the example service.
 #
-# Dont include this class directly.
-#
+# @api private
 class example::service {
   if $::example::manage_service {
     case $::example::service_provider {

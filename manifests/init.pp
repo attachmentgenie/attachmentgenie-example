@@ -19,20 +19,20 @@
 # @param service_ensure The state of the service.
 # @param user User that owns example files.
 class example (
-  Optional[String] $archive_source = $::example::params::archive_source,
-  String $group = $::example::params::group,
-  String $install_dir = $::example::params::install_dir,
-  Enum['archive','package'] $install_method = $::example::params::install_method,
-  Boolean $manage_repo = $::example::params::manage_repo,
-  Boolean $manage_service = $::example::params::manage_service,
-  Boolean $manage_user = $::example::params::manage_user,
-  String $package_name = $::example::params::package_name,
-  String $package_version = $::example::params::package_version,
-  String $service_name = $::example::params::service_name,
-  String $service_provider = $::example::params::service_provider,
-  Enum['running','stopped'] $service_ensure = $::example::params::service_ensure,
-  String $user = $::example::params::user,
-) inherits example::params {
+  String[1] $group,
+  Stdlib::Absolutepath $install_dir,
+  Enum['archive','package'] $install_method ,
+  Boolean $manage_repo,
+  Boolean $manage_service,
+  Boolean $manage_user,
+  String[1] $package_name,
+  String[1] $package_version,
+  String[1] $service_name,
+  String[1] $service_provider,
+  Enum['running','stopped'] $service_ensure,
+  String[1] $user,
+  Optional[Stdlib::HTTPUrl] $archive_source = undef,
+) {
   anchor { 'example::begin': }
   -> class{ '::example::install': }
   -> class{ '::example::config': }

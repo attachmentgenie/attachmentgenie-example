@@ -12,7 +12,18 @@ describe 'example' do
           }
         end
 
-        it { is_expected.to contain_archive('example archive').with_source('special.tar.gz') }
+        it { is_expected.to raise_error(%r{expects a match for Stdlib::HTTPUrl}) }
+      end
+
+      context 'with archive_source set to http://localhost/special.tar.gz' do
+        let(:params) do
+          {
+            archive_source: 'http://localhost/special.tar.gz',
+            install_method: 'archive',
+          }
+        end
+
+        it { is_expected.to contain_archive('example archive').with_source('http://localhost/special.tar.gz') }
       end
 
       context 'with group set to myspecialgroup' do
