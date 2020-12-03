@@ -1,42 +1,23 @@
-# example
+# attachmentgenie-example
 
-#### Table of Contents
+[![](https://img.shields.io/puppetforge/pdk-version/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
+[![](https://img.shields.io/puppetforge/v/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
+[![](https://img.shields.io/puppetforge/dt/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
+[![](https://travis-ci.org/attachmentgenie/attachmentgenie-example.svg?branch=master)](https://travis-ci.org/attachmentgenie/attachmentgenie-example)
+[![License](https://img.shields.io/github/license/attachmentgenie/attachmentgenie-example?stype=popout)](https://github.com/attachmentgenie/attachmentgenie-example/blob/master/LICENSE)
 
-1. [Overview](#overview)
-2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with example](#setup)
-    * [What example affects](#what-example-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with example](#beginning-with-example)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+Deploy and configure attachmentgenie's example on a node.
 
-## Overview
+- [Description](#description)
+- [Usage](#usage)
+- [Reference](#reference)
+- [Changelog](#changelog)
+- [Limitations](#limitations)
+- [Development](#development)
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+## Description
 
-## Module Description
-
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
-
-## Setup
-
-### What example affects
-
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+This project serves as my starter project
 
 ## Usage
 
