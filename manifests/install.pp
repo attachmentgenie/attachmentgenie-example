@@ -37,16 +37,15 @@ class example::install {
       }
 
       archive { 'example archive':
-        cleanup         => true,
-        creates         => "${::example::install_dir}/bin",
-        extract         => true,
-        extract_command => 'tar xfz %s --strip-components=1',
-        extract_path    => $::example::install_dir,
-        path            => '/tmp/example.tar.gz',
-        source          => $::example::archive_source,
-        user            => $::example::user,
-        group           => $::example::group,
-        require         => File['example install dir']
+        cleanup      => true,
+        creates      => "${::example::install_dir}/example",
+        extract      => true,
+        extract_path => $::example::install_dir,
+        group        => $::example::group,
+        path         => '/tmp/example.tar.gz',
+        source       => $::example::archive_source,
+        user         => $::example::user,
+        require      => File['example install dir']
       }
 
     }

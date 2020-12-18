@@ -79,51 +79,6 @@ describe 'example' do
         it { is_expected.to contain_archive('example archive').with_group('myspecialgroup') }
       end
 
-      context 'with group set to myspecialgroup and service_provider set to debian' do
-        let(:params) do
-          {
-            group: 'myspecialgroup',
-            install_dir: '/opt/example',
-            manage_service: true,
-            manage_user: true,
-            service_name: 'example',
-            service_provider: 'debian',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_group('myspecialgroup') }
-      end
-
-      context 'with group set to myspecialgroup and service_provider set to init' do
-        let(:params) do
-          {
-            group: 'myspecialgroup',
-            install_dir: '/opt/example',
-            manage_service: true,
-            manage_user: true,
-            service_name: 'example',
-            service_provider: 'init',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_group('myspecialgroup') }
-      end
-
-      context 'with group set to myspecialgroup and service_provider set to redhat' do
-        let(:params) do
-          {
-            group: 'myspecialgroup',
-            install_dir: '/opt/example',
-            manage_service: true,
-            manage_user: true,
-            service_name: 'example',
-            service_provider: 'redhat',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_group('myspecialgroup') }
-      end
-
       context 'with install_dir set to /opt/special' do
         let(:params) do
           {
@@ -133,7 +88,7 @@ describe 'example' do
         end
 
         it { is_expected.to contain_file('example install dir').with_path('/opt/special') }
-        it { is_expected.to contain_archive('example archive').with_creates('/opt/special/bin') }
+        it { is_expected.to contain_archive('example archive').with_creates('/opt/special/example') }
         it { is_expected.to contain_archive('example archive').with_extract_path('/opt/special') }
         it { is_expected.to contain_archive('example archive').that_requires('File[/opt/special]') }
       end
@@ -291,21 +246,6 @@ describe 'example' do
 
         it { is_expected.to contain_file('example install dir').with_owner('myspecialuser').that_requires(nil) }
         it { is_expected.to contain_archive('example archive').with_user('myspecialuser') }
-      end
-
-      context 'with user set to myspecialuser and service_provider set to debian' do
-        let(:params) do
-          {
-            user: 'myspecialuser',
-            install_dir: '/opt/example',
-            manage_user: true,
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'debian',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/example').with_owner('myspecialuser') }
       end
     end
   end

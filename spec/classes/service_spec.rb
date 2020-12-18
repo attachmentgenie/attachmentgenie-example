@@ -89,20 +89,6 @@ describe 'example' do
         it { is_expected.to contain_service('example').with_name('specialservice').that_subscribes_to('Package[example]') }
       end
 
-      context 'with service_provider set to init' do
-        let(:params) do
-          {
-            manage_service: true,
-            service_name: 'example',
-            service_provider: 'init',
-          }
-        end
-
-        it { is_expected.to contain_file('example service file').with_path('/etc/init.d/example') }
-        it { is_expected.not_to contain_systemd__Unit_file('example.service').that_comes_before('Service[example]') }
-        it { is_expected.to contain_service('example') }
-      end
-
       context 'with service_provider set to systemd' do
         let(:params) do
           {

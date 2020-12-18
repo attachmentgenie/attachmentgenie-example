@@ -10,6 +10,6 @@
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
 class { '::example':
-  archive_source => 'http://apache.xl-mirror.nl/example/example-1.1.3/example-1.1.3-bin-hadoop27-scala_2.11.tgz',
+  archive_source => 'https://github.com/attachmentgenie/golang-example/releases/download/v0.1.2/golang-example_0.1.2_linux_x86_64.tar.gz',
   install_method => 'archive',
 }
