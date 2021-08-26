@@ -3,7 +3,7 @@
 [![](https://img.shields.io/puppetforge/pdk-version/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
 [![](https://img.shields.io/puppetforge/v/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
 [![](https://img.shields.io/puppetforge/dt/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
-[![](https://travis-ci.org/attachmentgenie/attachmentgenie-example.svg?branch=master)](https://travis-ci.org/attachmentgenie/attachmentgenie-example)
+[![Spec Tests](https://github.com/attachmentgenie/attachmentgenie-example/actions/workflows/spec.yml/badge.svg)](https://github.com/attachmentgenie/attachmentgenie-example/actions/workflows/spec.yml)
 [![License](https://img.shields.io/github/license/attachmentgenie/attachmentgenie-example?stype=popout)](https://github.com/attachmentgenie/attachmentgenie-example/blob/master/LICENSE)
 
 Deploy and configure attachmentgenie's example on a node.
