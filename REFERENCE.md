@@ -19,7 +19,7 @@
 
 ## Classes
 
-### `example`
+### <a name="example"></a>`example`
 
 Class to install and configure example.
 
@@ -35,9 +35,23 @@ include ::example
 
 #### Parameters
 
-The following parameters are available in the `example` class.
+The following parameters are available in the `example` class:
 
-##### `archive_source`
+* [`archive_source`](#archive_source)
+* [`group`](#group)
+* [`install_dir`](#install_dir)
+* [`install_method`](#install_method)
+* [`manage_repo`](#manage_repo)
+* [`manage_service`](#manage_service)
+* [`manage_user`](#manage_user)
+* [`package_name`](#package_name)
+* [`package_version`](#package_version)
+* [`service_name`](#service_name)
+* [`service_provider`](#service_provider)
+* [`service_ensure`](#service_ensure)
+* [`user`](#user)
+
+##### <a name="archive_source"></a>`archive_source`
 
 Data type: `Optional[Stdlib::HTTPUrl]`
 
@@ -45,79 +59,79 @@ Location of example binary release.
 
 Default value: ``undef``
 
-##### `group`
+##### <a name="group"></a>`group`
 
 Data type: `String[1]`
 
 Group that owns example files.
 
-##### `install_dir`
+##### <a name="install_dir"></a>`install_dir`
 
 Data type: `Stdlib::Absolutepath`
 
 Location of example binary release.
 
-##### `install_method`
+##### <a name="install_method"></a>`install_method`
 
 Data type: `Enum['archive','package']`
 
 How to install example.
 
-##### `manage_repo`
+##### <a name="manage_repo"></a>`manage_repo`
 
 Data type: `Boolean`
 
 Manage the example repo.
 
-##### `manage_service`
+##### <a name="manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
 Manage the example service.
 
-##### `manage_user`
+##### <a name="manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
 Manage example user and group.
 
-##### `package_name`
+##### <a name="package_name"></a>`package_name`
 
 Data type: `String[1]`
 
 Name of package to install.
 
-##### `package_version`
+##### <a name="package_version"></a>`package_version`
 
 Data type: `String[1]`
 
 Version of example to install.
 
-##### `service_name`
+##### <a name="service_name"></a>`service_name`
 
 Data type: `String[1]`
 
 Name of service to manage.
 
-##### `service_provider`
+##### <a name="service_provider"></a>`service_provider`
 
 Data type: `String[1]`
 
 Init system that is used.
 
-##### `service_ensure`
+##### <a name="service_ensure"></a>`service_ensure`
 
 Data type: `Enum['running','stopped']`
 
 The state of the service.
 
-##### `user`
+##### <a name="user"></a>`user`
 
 Data type: `String[1]`
 
 User that owns example files.
 
-### `example::repo`
+### <a name="examplerepo"></a>`example::repo`
 
 A description of what this class does
 
