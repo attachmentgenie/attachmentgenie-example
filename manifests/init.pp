@@ -33,9 +33,11 @@ class example (
   String[1] $user,
   Optional[Stdlib::HTTPUrl] $archive_source = undef,
 ) {
-  anchor { 'example::begin': }
-  -> class{ '::example::install': }
-  -> class{ '::example::config': }
-  ~> class{ '::example::service': }
-  -> anchor { 'example::end': }
+  contain 'example::install'
+  contain 'example::config'
+  contain 'example::service'
+
+  Class['example::install']
+  -> Class['example::config']
+  ~> Class['example::service']
 }
