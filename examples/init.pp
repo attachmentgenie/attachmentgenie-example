@@ -10,6 +10,6 @@
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
 class { 'example':
-  archive_source => 'https://github.com/attachmentgenie/golang-example/releases/download/v0.1.2/golang-example_0.1.2_linux_x86_64.tar.gz',
+  archive_source => 'https://github.com/attachmentgenie/golang-example/releases/download/v0.2.0/golang-example_0.2.0_linux_x86_64.tar.gz',
   install_method => 'archive',
 }
