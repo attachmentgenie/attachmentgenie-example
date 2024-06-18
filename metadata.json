@@ -18,7 +18,7 @@
     },
     {
       "name": "puppet/systemd",
-      "version_requirement": ">= 1.1.1 < 6.0.0"
+      "version_requirement": ">= 1.1.1 < 8.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -47,13 +47,13 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 7.0.0 < 9.0.0"
+      "version_requirement": ">= 7.9.0 < 9.0.0"
     }
   ],
   "tags": [
     "example"
   ],
-  "pdk-version": "3.0.0",
-  "template-url": "https://github.com/puppetlabs/pdk-templates#3.0.0",
-  "template-ref": "tags/3.0.0-0-g056e50d"
+  "pdk-version": "3.2.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#3.2.0",
+  "template-ref": "tags/3.2.0-0-gb257ef1"
 }
