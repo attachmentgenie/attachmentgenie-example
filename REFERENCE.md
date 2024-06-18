@@ -9,7 +9,7 @@
 #### Public Classes
 
 * [`example`](#example): Class to install and configure example.  Use this module to install and configure example.
-* [`example::repo`](#examplerepo): A short summary of the purpose of this class
+* [`example::repo`](#example--repo): A short summary of the purpose of this class
 
 #### Private Classes
 
@@ -37,101 +37,101 @@ include ::example
 
 The following parameters are available in the `example` class:
 
-* [`archive_source`](#archive_source)
-* [`group`](#group)
-* [`install_dir`](#install_dir)
-* [`install_method`](#install_method)
-* [`manage_repo`](#manage_repo)
-* [`manage_service`](#manage_service)
-* [`manage_user`](#manage_user)
-* [`package_name`](#package_name)
-* [`package_version`](#package_version)
-* [`service_name`](#service_name)
-* [`service_provider`](#service_provider)
-* [`service_ensure`](#service_ensure)
-* [`user`](#user)
+* [`archive_source`](#-example--archive_source)
+* [`group`](#-example--group)
+* [`install_dir`](#-example--install_dir)
+* [`install_method`](#-example--install_method)
+* [`manage_repo`](#-example--manage_repo)
+* [`manage_service`](#-example--manage_service)
+* [`manage_user`](#-example--manage_user)
+* [`package_name`](#-example--package_name)
+* [`package_version`](#-example--package_version)
+* [`service_name`](#-example--service_name)
+* [`service_provider`](#-example--service_provider)
+* [`service_ensure`](#-example--service_ensure)
+* [`user`](#-example--user)
 
-##### <a name="archive_source"></a>`archive_source`
+##### <a name="-example--archive_source"></a>`archive_source`
 
 Data type: `Optional[Stdlib::HTTPUrl]`
 
 Location of example binary release.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="group"></a>`group`
+##### <a name="-example--group"></a>`group`
 
 Data type: `String[1]`
 
 Group that owns example files.
 
-##### <a name="install_dir"></a>`install_dir`
+##### <a name="-example--install_dir"></a>`install_dir`
 
 Data type: `Stdlib::Absolutepath`
 
 Location of example binary release.
 
-##### <a name="install_method"></a>`install_method`
+##### <a name="-example--install_method"></a>`install_method`
 
 Data type: `Enum['archive','package']`
 
 How to install example.
 
-##### <a name="manage_repo"></a>`manage_repo`
+##### <a name="-example--manage_repo"></a>`manage_repo`
 
 Data type: `Boolean`
 
 Manage the example repo.
 
-##### <a name="manage_service"></a>`manage_service`
+##### <a name="-example--manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
 Manage the example service.
 
-##### <a name="manage_user"></a>`manage_user`
+##### <a name="-example--manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
 Manage example user and group.
 
-##### <a name="package_name"></a>`package_name`
+##### <a name="-example--package_name"></a>`package_name`
 
 Data type: `String[1]`
 
 Name of package to install.
 
-##### <a name="package_version"></a>`package_version`
+##### <a name="-example--package_version"></a>`package_version`
 
 Data type: `String[1]`
 
 Version of example to install.
 
-##### <a name="service_name"></a>`service_name`
+##### <a name="-example--service_name"></a>`service_name`
 
 Data type: `String[1]`
 
 Name of service to manage.
 
-##### <a name="service_provider"></a>`service_provider`
+##### <a name="-example--service_provider"></a>`service_provider`
 
 Data type: `String[1]`
 
 Init system that is used.
 
-##### <a name="service_ensure"></a>`service_ensure`
+##### <a name="-example--service_ensure"></a>`service_ensure`
 
 Data type: `Enum['running','stopped']`
 
 The state of the service.
 
-##### <a name="user"></a>`user`
+##### <a name="-example--user"></a>`user`
 
 Data type: `String[1]`
 
 User that owns example files.
 
-### <a name="examplerepo"></a>`example::repo`
+### <a name="example--repo"></a>`example::repo`
 
 A description of what this class does
 
