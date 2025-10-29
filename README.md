@@ -47,6 +47,7 @@ This project contains tests for both rspec-puppet and litmus to verify functiona
 pdk bundle install
 pdk bundle exec rake 'litmus:provision_list[puppet8]'
 pdk bundle exec rake 'litmus:install_agent[puppet8]'
-pdk bundle exec rake litmus:install_module
-pdk bundle exec rake litmus:acceptance:parallel
-pdk bundle exec rake litmus:tear_down
+pdk bundle exec rake 'litmus:install_module'
+pdk bundle exec rake 'litmus:acceptance:parallel'
+pdk bundle exec rake 'litmus:tear_down'
+```

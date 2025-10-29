@@ -1,6 +1,6 @@
 {
   "name": "attachmentgenie-example",
-  "version": "5.0.0",
+  "version": "5.0.0-rc0",
   "author": "bram vogelaar <bram@attachmentgenie.com>",
   "summary": "Setup example",
   "license": "MIT",
